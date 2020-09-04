@@ -1,0 +1,89 @@
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+//font change style
+.fontChange {
+  h1 {
+    &::first-letter {
+      color: #808080;
+    }
+    span {
+      color: #feda4a;
+    }
+  }
+}
+
+//star wars film style
+.films {
+  padding: 10px;
+  min-height: 100vh;
+  font-family: 'Raleway';
+  background-color: #000;
+  color: #f4f4f4;
+  hr {
+    border-width: 0.5px;
+  }
+  .film-list {
+    display: flex;
+  }
+  .title {
+    cursor: pointer;
+    &:hover {
+      color: #feda4a;
+    }
+  }
+}
+.fade {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 25px;
+  min-height: 40vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+.film-detail {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 4px;
+  line-height: 120%;
+  perspective: 400px;
+  text-align: center;
+  .detail-crawl {
+    position: relative;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl 40s linear;
+    animation-iteration-count: infinite;
+    .film-title {
+      font-size: 100%;
+      text-align: center;
+      margin: 0 0 50px;
+      text-transform: uppercase;
+    }
+    .film-opening-crawl {
+      white-space: pre-wrap;
+    }
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(15deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
