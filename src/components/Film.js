@@ -16,13 +16,19 @@ const Film = ({ films }) => {
       <hr />
       <div className='film-list'>
         <div className='film-titles'>
-          {films.map((film) => (
-            <h3 onClick={() => showFilmDetail(film.url)} className='title'>
-              {film.title}{' '}
+          {films.map((film, index) => (
+            <h3
+              key={index}
+              onClick={() => showFilmDetail(film.url)}
+              className='title'
+            >
+              {film.title}
             </h3>
           ))}
         </div>
-        {url && <FilmDetail url={url} className={cssClass} />}
+        {url && (
+          <FilmDetail url={url.replace('http', 'https')} className={cssClass} />
+        )}
       </div>
     </div>
   );

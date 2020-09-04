@@ -26,8 +26,10 @@ body {
   hr {
     border-width: 0.5px;
   }
-  .film-list {
-    display: flex;
+  @media (min-width: 767px) {
+    .film-list {
+      display: flex;
+    }
   }
   .title {
     cursor: pointer;
